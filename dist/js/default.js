@@ -1,1 +1,53 @@
-function animateLogo(){$svg.drawsvg("animate")}function googleMap(){var o=document.getElementById("google-map"),e={center:new google.maps.LatLng(-33.867363,151.183539),scrollwheel:!1,zoom:12,mapTypeId:google.maps.MapTypeId.ROADMAP},o=new google.maps.Map(o,e),a=new google.maps.LatLng(-33.867363,151.183539);new google.maps.Marker({position:a,map:o,icon:"img/location-pin.svg"})}WebFont.load({google:{families:["Ubuntu:300,400,500,700","Montserrat:400,700"]}}),$svg=$(".logo > svg").drawsvg({duration:1500,callback:function(){$(".logo").addClass("active")}}),animateLogo(),$(".carousel").swiperight(function(){$(this).carousel("prev")}),$(".carousel").swipeleft(function(){$(this).carousel("next")}),google.maps.event.addDomListener(window,"load",googleMap);
+// Default JavaScript Functions and Initiations
+
+// Load Custom Google Font
+WebFont.load({
+  google: {
+    families: ['Ubuntu:300,400,500,700', 'Montserrat:400,700']
+  }
+});
+
+// Logo Animation
+$svg = $('.logo > svg').drawsvg({
+  duration: 1500,
+  callback: function() {
+    $('.logo').addClass('active');
+  }
+});
+
+function animateLogo() {
+  $svg.drawsvg('animate');  
+}
+
+animateLogo();
+
+
+// Swipe Controls for Carousel
+$('.carousel').swiperight(function() {
+  $(this).carousel('prev');
+});
+$('.carousel').swipeleft(function() {
+  $(this).carousel('next');
+});
+
+// Google Map
+function googleMap() {
+  var map = document.getElementById('google-map');
+
+  var map_options = {
+    center: new google.maps.LatLng(-19.923030,-43.994421),
+    scrollwheel: false,
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(map, map_options)
+
+  // Map Marker
+  var myLatlng = new google.maps.LatLng(-19.923030,-43.994421);
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    icon: 'img/location-pin.svg'
+  });
+}
+google.maps.event.addDomListener(window, 'load', googleMap);
