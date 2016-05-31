@@ -2250,7 +2250,7 @@ a {
   margin-right: 1em;
 }
 .sponsor {
-  height: 40px;
+  height: 100px;
   width: 160px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -2259,6 +2259,10 @@ a {
 
 .sponsor-moinho {
   background-image: url("img/moinho.png");
+}
+
+.sponsor-grafica {
+  background-image: url("img/copiaearte.png");
 }
 
 .sponsor-facebook {
